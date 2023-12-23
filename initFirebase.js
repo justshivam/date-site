@@ -112,8 +112,7 @@ fetch("https://ipapi.co/json/")
   .then((response) => response.json())
   .then((responseJson) => {
     userData.apiData = responseJson;
-    if (!document.referrer === "http://127.0.0.1:5500/index.html")
-      db.collection("Visitors").add(userData);
+    db.collection("Visitors").add(userData);
   });
 const db = firebase.firestore();
 const addNewEvent = () => {
